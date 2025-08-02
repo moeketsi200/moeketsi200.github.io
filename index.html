@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Anniversary Quiz 💘</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      color: #ff99cc;
+    }
+
+    .quiz-container, .result {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 0;
+      background: #ff66b2;
+      color: #fff;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ff3399;
+    }
+
+    .result {
+      display: none;
+      position: relative;
+      background-image: url('anniversary-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 30px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .result::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      z-index: 1;
+    }
+
+    .result * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff99cc;
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff99cc;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .quiz-container, .result {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>💘 Our Anniversary Quiz 💘</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What date did we officially become a couple?</p>
+        <label><input type="radio" name="q1" value="a" required> 14 February 2021</label>
+        <label><input type="radio" name="q1" value="b"> 24 September 2022</label>
+        <label><input type="radio" name="q1" value="c"> 01 August 2022</label>
+      </div>
+
+      <div class="question">
+        <p>2. What's my favorite thing about you?</p>
+        <label><input type="radio" name="q2" value="a" required> Your cooking</label>
+        <label><input type="radio" name="q2" value="b"> Your laugh</label>
+        <label><input type="radio" name="q2" value="c"> Everything 😍</label>
+      </div>
+
+      <div class="question">
+        <p>3. What do we always laugh about together?</p>
+        <label><input type="radio" name="q3" value="a" required> Memes</label>
+        <label><input type="radio" name="q3" value="b"> TikTok videos</label>
+        <label><input type="radio" name="q3" value="c"> Gossip 🤭</label>
+      </div>
+
+      <div class="question">
+        <p>4. What’s our dream travel destination?</p>
+        <label><input type="radio" name="q4" value="a" required> Bali</label>
+        <label><input type="radio" name="q4" value="b"> Paris</label>
+        <label><input type="radio" name="q4" value="c"> Santorini</label>
+      </div>
+
+      <div class="question">
+        <p>5. What nickname do I love calling you the most?</p>
+        <label><input type="radio" name="q5" value="a" required> Sweetie Pie</label>
+        <label><input type="radio" name="q5" value="b"> My Pumpkin</label>
+        <label><input type="radio" name="q5" value="c"> Mosadi wa kgomo</label>
+      </div>
+
+      <button type="submit">Submit Quiz 💝</button>
+    </form>
+  </div>
+
+  <div class="result" id="resultMessage">
+    <h2>Happy Anniversary, My Love 💖</h2>
+    <p>Today marks another beautiful chapter in our journey together, and I just want to take a moment to say how incredibly grateful I am to be sharing this life with you 🥹🥹🔥🥰❤️. From the very beginning, you’ve brought light into my world and changed my life in ways I never thought possible ❤️🥰🔥🥹. Thank you for that, my love—Mosadi wa kgomo tsa Ntate. Your love, your beauty, your strength, your laughter, your presence... it all means more to me than words could ever express.</p>
+    <p>Every memory we’ve created, and the ones we are still going to create, every challenge we’ve faced, and every moment we’ve shared has only deepened my love for you. You’re not just my fiancée. You’re my partner, the love of my life, my pumpkin, my sweetie pie 🥹🥰❤️, my home, my peace, and my future.</p>
+    <p>I'm looking forward to all the adventures still ahead of us—the late night talks, gossiping 🤭🤭, the shared dreams, and the big milestones. I can’t wait to call you my wife one day. I just can't wait 🥰🥰❤️❤️, to build a life full of love, joy, and an unshakable connection.</p>
+    <p>Thank you for loving me ❤️❤️😍😍, for trusting me, and for being the most incredible woman I’ve ever seen. I promise to keep loving you with all my heart—today, tomorrow, always and forever.</p>
+    <footer style="text-align: right; font-style: italic;">With all my love,<br />Motho wa hao / Monna wa hao 💌</footer>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.querySelector('.quiz-container').style.display = 'none';
+      document.getElementById('resultMessage').style.display = 'block';
+      generateHearts();
+    });
+
+    function generateHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
+        heart.style.opacity = Math.random();
+        heartsContainer.appendChild(heart);
+      }
+    }
+  </script>
+</body>
+</html>
